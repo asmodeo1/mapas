@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo 3</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="leaflet.awesome-markers.css" />
+    <script src="leaflet.awesome-markers.min.js" defer></script>
+
+    <style>
+      #mapa {
+        height: 500px;
+        border: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapa"></div>
+    <script>
+      // Debemos asegurarnos de que se haya cargado la API de LeafLet anets de usarla.
+      //Lo más fácil sería tener este código en un script aparte y usar defer
+      window.addEventListener("load", () => {
+        // window.onload = () => {
+
+        const mapa = L.map("mapa").setView([42.22149, -8.73205], 17);
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(mapa);
+
+        const marcador1 = L.marker([42.22149, -8.73205], {
+          icon: L.AwesomeMarkers.icon({
+            icon: "bag-fill" /* Cambiar este nombre por el deseado de BootStrap icons */,
+            prefix: "bi",
+            markerColor:
+              "red" /* Color del marcador, de los que admite Leaflet.awesome-markers */,
+            iconColor: "yellow" /* Color del icono */,
+          }),
+        }).addTo(mapa);
+
+        marcador1.bindPopup(
+          "<h1>Prueba</h1><img src='tienda.png'><p>Esto es un texto</p>"
+        );
+
+        const marcador2 = L.marker([42.22349, -8.73205], {
+          icon: L.AwesomeMarkers.icon({
+            icon: "emoji-neutral" /* Cambiar este nombre por el deseado de BootStrap icons */,
+            prefix: "bi",
+            markerColor:
+              "blue" /* Color del marcador, de los que admite Leaflet.awesome-markers */,
+            iconColor: "white" /* Color del icono */,
+          }),
+        }).addTo(mapa);
+
+        marcador1
+          .bindPopup("<h1>Prueba</h1><p>Esto es el texto del marcador 2</p>")
+          .openPopup();
+
+        const circulo = L.circle([42.22149, -8.73205], {
+          color: "yellow" /* Color del borde */,
+          fillColor: "cyan" /* Color del relleno */,
+          fillOpacity: 0.5 /* Opacidad */,
+          radius: 50 /* Radio */,
+        }).addTo(mapa);
+
+        const poligono = L.polygon(
+          [
+            [42.23282, -8.72264],
+            [42.23282, -8.72364],
+            [42.23382, -8.72264],
+            [42.23382, -8.72564],
+          ],
+          { color: "red" }
+        ).addTo(mapa);
+
+        const popup = L.popup()
+          .setLatLng([42.22149, -8.73405])
+          .setContent("Texto de prueba")
+          .openOn(mapa);
+
+        function onMapClick(evt) {
+          popup
+            .setLatLng(evt.latlng) // Nos colocamos en las coordenadas pulsadas
+            .setContent(
+              `Coordenadas: (${evt.latlng.lat.toFixed(
+                4
+              )}, ${evt.latlng.lng.toFixed(4)})`
+            )
+            .openOn(mapa);
+        }
+
+        mapa.on("click", onMapClick);
+      });
+    </script>
+  </body>
+</html>
