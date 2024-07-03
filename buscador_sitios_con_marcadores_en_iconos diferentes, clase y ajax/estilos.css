@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+header {
+    font-family: nunito;
+    padding: 1rem;
+    background-color: rgb(5, 66, 90);
+    color: white;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+header label {
+    margin-right: 1rem;
+}
+
+/* Por si queremos cambiar los colores de los popups */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: bisque !important;
+}
+
+#mensaje {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    text-align: center;
+    padding-top: 20%;
+    font-size: 2rem;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.515);
+    text-transform: uppercase;
+    font-family: nunito;
+    display: none;
+}
+#mensaje img {
+    max-width: 200px; 
+}

@@ -1,0 +1,7 @@
+[
+    {"nombre": "Farmacia pepe", "latitud": 42.251729925358446, "longitud": -8.7235977773176, "url": "http://www.google.com"  },
+    {"nombre": "Farmacia Eva", "latitud": 42.23471493980929,  "longitud": -8.723326930729363, "url": "http://www.google.com"  },
+    {"nombre": "Farmacia Ana", "latitud": 42.2307747897661, "longitud": -8.703763805035369, "url": "http://www.google.com"  },
+    {"nombre": "Farmacia Sergio", "latitud": 42.23690551208869,  "longitud": -8.687266175031646, "url": "http://www.google.com" },
+    {"nombre": "Farmacia Susana", "latitud": 42.24817093830278,  "longitud": -8.70575162748493, "url": "http://www.google.com"  }
+]

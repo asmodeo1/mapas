@@ -1,0 +1,7 @@
+[
+    {"nombre": "Tienda pepe", "latitud": 42.233829925358446, "longitud": -8.7234977773176, "url": "http://www.google.com"  },
+    {"nombre": "Tienda Eva", "latitud": 42.23431493980929,  "longitud": -8.723926930729363, "url": "http://www.google.com"  },
+    {"nombre": "Tienda Ana", "latitud": 42.2305747897661, "longitud": -8.703713805035369, "url": "http://www.google.com"  },
+    {"nombre": "Tienda Sergio", "latitud": 42.23640551208869,  "longitud": -8.687666175031646, "url": "http://www.google.com" },
+    {"nombre": "Tienda Susana", "latitud": 42.24827093830278,  "longitud": -8.70565162748493, "url": "http://www.google.com"  }
+]

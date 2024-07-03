@@ -16,8 +16,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin="" defer></script>
-    <script src="index.js" defer></script>
-    <script src="datos.js" defer></script>
+    <script type="module" src="index.js"></script>
     <style>
         #mapa { 
             height: 500px; 
@@ -37,5 +36,9 @@
         </select>
     </header>
     <div id="mapa"></div>
+    <div id="mensaje">
+        <h2>Cargando datos</h2>
+        <img src="cargando.gif" alt="cargando datos">
+    </div>
 </body>
 </html>
