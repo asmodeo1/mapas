@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localización</title>
+</head>
+<body>
+    
+    <script>
+
+function posicionEncontrada(datos){
+        /* Dependiendo del sistema de posicionamiento del dispositivo tendremos
+        todos o solo parte de los siguientes datos (devolviendo undefined o null en los casos 
+        en los que no haya) */
+        const latitud = datos.coords.latitude; 
+        const longitud = datos.coords.longitude;
+        const precision = datos.coords.accuray; // En metros
+        const altitud = datos.coords.altitude;
+        const precisionAltitud = datos.coords. altitudeAccuracy; // En metros
+        const rumbo = datos.coords.heading; // En grados
+        const velocidad = datos.coords.speed; //En metros / segundo
+        const tiempo = datos.coords.timeStamp; // Un objeto DomTimeStamp (similar a 
+                                //Date)
+        console.log(latitud, longitud, precision, altitud, precisionAltitud, rumbo, velocidad, tiempo);
+    }
+
+    
+        if(navigator.geolocation) {
+            // Debemos pasar la función a ejecutar cuando se obtengan los datos
+            navigator.geolocation.getCurrentPosition(posicionEncontrada);
+        }
+
+    </script>
+</body>
+</html>
